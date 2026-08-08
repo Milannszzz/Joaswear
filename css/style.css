@@ -1029,19 +1029,33 @@ ul{
 .statement,
 .shop-cta{
 
-    opacity:0;
+    opacity:1;
 
-    transform:translateY(40px);
+    transform:translateY(0);
 
-    transition:opacity .8s ease, transform .8s ease;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
 
 }
 
 
-.intro.visible,
-.featured.visible,
-.statement.visible,
-.shop-cta.visible{
+.intro.reveal,
+.featured.reveal,
+.statement.reveal,
+.shop-cta.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+.intro.reveal.visible,
+.featured.reveal.visible,
+.statement.reveal.visible,
+.shop-cta.reveal.visible{
 
     opacity:1;
 
