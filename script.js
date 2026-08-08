@@ -115,40 +115,41 @@ window.addEventListener("load", () => {
 });
 
 
-/* =========================================
+/* =========================================================
    SCROLL REVEAL
-========================================= */
+   ========================================================= */
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealSections = document.querySelectorAll(
+    '.intro, .featured, .statement, .shop-cta'
+);
 
 const revealObserver = new IntersectionObserver(
+    (entries) => {
 
-    (entries, observer) => {
-
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("active");
+                entry.target.classList.add('visible');
 
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
 
             }
 
         });
 
     },
-
     {
-        threshold: 0.15
+        threshold: 0.12
     }
-
 );
 
 
-revealElements.forEach(element => {
+revealSections.forEach((section) => {
 
-    revealObserver.observe(element);
+    section.classList.add('reveal');
+
+    revealObserver.observe(section);
 
 });
 
