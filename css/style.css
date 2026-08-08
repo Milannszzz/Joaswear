@@ -1,0 +1,492 @@
+/* ===========================
+   GOOGLE FONTS
+=========================== */
+
+:root{
+
+    --primary:#0B1F3A;
+    --secondary:#D4AF37;
+    --white:#ffffff;
+    --light:#F8FAFC;
+    --text:#1E293B;
+    --transition:.35s ease;
+    --radius:12px;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--light);
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+
+}
+
+.navbar{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 0;
+
+}
+
+.logo{
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.7rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--secondary);
+
+}
+
+.quote-btn{
+
+    background:var(--secondary);
+
+    color:#111;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.quote-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    background-image:url("../images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(8,18,37,.68);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    width:min(850px,90%);
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    color:var(--secondary);
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+    font-size:.9rem;
+
+}
+
+.hero h1{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:4.5rem;
+
+    line-height:1.1;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    color:#d6d6d6;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+    background:var(--secondary);
+
+    color:#111;
+
+    padding:18px 36px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:18px 36px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.quote-btn{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:2.3rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.hero-tag{
+
+letter-spacing:1.5px;
+
+font-size:.75rem;
+
+}
+
+}
+
+/* ===========================
+   STICKY NAVBAR
+=========================== */
+
+header{
+
+    transition:.35s ease;
+
+}
+
+header.sticky{
+
+    position:fixed;
+
+    background:rgba(11,31,58,.85);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+/* ===========================
+   HERO ANIMATION
+=========================== */
+
+.hero-content{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+.hero-content.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+   HERO IMAGE SLOW ZOOM
+=========================== */
+
+.hero{
+
+    animation:heroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:108%;
+
+    }
+
+}
+
+/* ===========================
+   BUTTON EFFECTS
+=========================== */
+
+.primary-btn,
+.secondary-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+.secondary-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.5s;
+
+}
+
+.primary-btn:hover::before,
+.secondary-btn:hover::before{
+
+    width:100%;
+
+}
+
+/* ===========================
+   NAV LINK UNDERLINE
+=========================== */
+
+.nav-links a{
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
